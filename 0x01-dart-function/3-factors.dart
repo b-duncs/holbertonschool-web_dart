@@ -6,5 +6,4 @@ int fact(int f) {
     return 1;
   }
   return f * fact(f - 1);
-  }
 }
