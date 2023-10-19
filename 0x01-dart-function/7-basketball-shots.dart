@@ -1,3 +1,4 @@
+int whoWins(Map<String, int> teamA, Map<String, int> teamB);
 num getPoints(Map team) {
   num points = 0;
   team.forEach((key, value) {
