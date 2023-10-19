@@ -1,10 +1,10 @@
-import '0-util.dart';
+imimport '0-util.dart';
 
-Future<int> fetchUsersCount() => Future.delayed(
-  const Duration(seconds: 2),
-      () => 19,
-);
-
-usersCount() async {
-  print(await fetchUsersCount());
+Future<void> usersCount() async {
+  try {
+    final userCount = await fetchUsersCount();
+    print('$userCount');
+  } catch (error) {
+    print('Failed to fetch user count: $error');
+  }
 }

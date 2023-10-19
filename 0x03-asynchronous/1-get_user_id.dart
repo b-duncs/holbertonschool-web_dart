@@ -1,10 +1,13 @@
-import '0-util.dart';
+import '1-util.dart';
+import 'dart:convert';
 
-Future<void> usersCount() async {
+Future<String> getUserId() async {
   try {
-    final userCount = await fetchUsersCount();
-    print('$userCount');
+    final userData = await fetchUserData();
+    final Map<String, dynamic> userMap = json.decode(userData);
+    final String userId = userMap['id'];
+    return userId;
   } catch (error) {
-    print('Failed to fetch user count: $error');
+    throw 'Failed to get user ID: $error';
   }
 }
